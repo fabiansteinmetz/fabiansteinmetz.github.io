@@ -5,3 +5,4 @@ Computer Science, Minerva Universitz
 
 ### Work Experience
 
+### Projects
