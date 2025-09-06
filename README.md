@@ -1,9 +1,8 @@
-# 👋 Hi, I'm Fabian Steinmetz
+# Fabian Steinmetz
 
 📧 fabian@uni.minerva.edu  
-📱 +82 1083973646  
-💼 [LinkedIn](https://linkedin.com/in/fabian-steinmetz-224830263)  
-🌍 Leverkusen, Germany  
+📱 + 203-589-2778
+💼 [LinkedIn](https://linkedin.com/in/fabian-steinmetz-224830263) 
 
 ---
 
@@ -17,29 +16,31 @@ My curiosity lies in tackling **social and environmental challenges through math
 
 ## 🎓 Education
 - **Minerva University** (2023–2027) — *B.S. Computer Science & B.A. Economics*  
-- **St Clare’s Oxford** (2021–2023) — *International Baccalaureate, 45/45 (Top 0.1% globally)*  
+
 
 ---
 
 ## 💼 Experience
+- **Data Science Intern** - Alpha Sophia Technologies
+◦ Created a Python data pipeline to match 3.9M+ HCPs with 25M+ open-source PubMed publications.
+◦ Implemented 10+ scripts on Snowflake SQL to increase match rates by 103% through PMI analysis, clus-
+tering, and creative email auto-complete algorithms.
+◦ Created entire SQL/XML database table structure for Clinical Trials data.
 - **Research Assistant** — Korea Institute of Science and Technology (KIST)  
-  *Seoul, South Korea (2025–present)*  
   Researching mineral carbonation methods to recycle CO₂ into sustainable construction materials.  
 
 - **Environmental Engineering RA** — National Taiwan University  
-  *Taipei, Taiwan (2024–present)*  
-  Applying ML to build sustainability indicators for Tanzanian farms.  
+  ◦ Co-authoring, writing, and debugging Python code (ETL, Random Forest, clustering, visualizations) to
+explore applications of ML algorithms in creating sustainability indicators for Tanzanian farms 2 using
+2021 NPS Data with Prof. Ma 2.
 
 - **App Development Intern** — Andgreen  
-  *Taipei, Taiwan (2024–2025)*  
   Built an iOS app with React Native to track ESG actions for Taiwanese companies.  
 
-- **Teaching Assistant** — Minerva University  
-  *San Francisco, CA (2024–present)*  
-  Grading, tutoring, and leading Python + statistics study sessions for 40+ students.  
+- **Statistics & Probability Teaching Assistant** — Minerva University  
+  Grading, tutoring, and leading a computational statistics *CS114) study sessions for 40+ students.  
 
 - **Data Analysis Intern** — Consulate General of Finland in Los Angeles  
-  *Los Angeles, CA (2023–2024)*  
   Conducted survey & analysis on successful transatlantic research partnerships.  
 
 ---
