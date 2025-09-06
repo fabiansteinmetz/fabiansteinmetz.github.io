@@ -1,1 +1,7 @@
-# fabiansteinmetz.github.io
+# Computer Science Student
+
+### Education
+Computer Science, Minerva Universitz
+
+### Work Experience
+
