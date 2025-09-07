@@ -6,7 +6,7 @@
 
 ---
 
-## 🚀 About Me
+## About Me
 I am a **Computer Science & Mathematics student at Minerva University** (GPA 3.9/4.0).  
 Currently researching **Machine Learning applications in Environmental Engineering** at **National Taiwan University** and interning as an **App Developer** at Andgreen.  
 
@@ -21,15 +21,13 @@ My curiosity lies in tackling **social and environmental challenges through math
 ---
 
 ## 💼 Experience
-- **Data Science Intern** - Alpha Sophia Technologies
+- **Data Engineering Intern** - Alpha Sophia Technologies
 ◦ Created a Python data pipeline to match 3.9M+ HCPs with 25M+ open-source PubMed publications.
 ◦ Implemented 10+ scripts on Snowflake SQL to increase match rates by 103% through PMI analysis, clus-
 tering, and creative email auto-complete algorithms.
 ◦ Created entire SQL/XML database table structure for Clinical Trials data.
-- **Research Assistant** — Korea Institute of Science and Technology (KIST)  
-  Researching mineral carbonation methods to recycle CO₂ into sustainable construction materials.  
 
-- **Environmental Engineering RA** — National Taiwan University  
+- **Data Science Research Assistant** — National Taiwan University  
   ◦ Co-authoring, writing, and debugging Python code (ETL, Random Forest, clustering, visualizations) to
 explore applications of ML algorithms in creating sustainability indicators for Tanzanian farms 2 using
 2021 NPS Data with Prof. Ma 2.
@@ -45,7 +43,7 @@ explore applications of ML algorithms in creating sustainability indicators for 
 
 ---
 
-## 🏆 Awards
+## Awards
 - 3rd Place — International Maastricht Mathematical Modelling Competition (2021)  
 - 2× Gold, 1× Silver — German Debating Championships (2022)  
 - 1st Place (twice) — German Mathematics Olympiad, Cologne region  
@@ -60,7 +58,7 @@ These project pages include **LaTeX-rendered models** and **code snippets** (SQL
 
 ---
 
-## 🛠 Skills
+## Skills
 - **Languages & Tools:** Python, R, JavaScript, LaTeX, HTML & CSS, Pandas, NumPy, Sage, scikit-learn  
 - **Spoken Languages:** English (native), German (native), French (intermediate)  
 
