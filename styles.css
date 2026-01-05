@@ -5,20 +5,26 @@
 }
 
 :root {
-    --primary-color: #1a1a1a;
-    --secondary-color: #4a4a4a;
-    --accent-color: #000;
-    --text-color: #2a2a2a;
-    --light-gray: #f5f5f5;
-    --border-color: #d0d0d0;
+    --font-heading: 'IBM Plex Serif', serif;
+    --font-body: 'IBM Plex Sans', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.5;
-    color: var(--text-color);
-    background-color: #fff;
-    font-size: 15px;
+    font-family: var(--font-body);
+    font-size: 0.95rem; /* Slightly smaller because Plex is very clear */
+    line-height: 1.6;
+    color: #333;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.5px; /* Makes headers look tighter and professional */
+}
+
+.tag {
+    font-family: var(--font-mono); /* Makes your tags look like code */
+    font-size: 0.8rem;
 }
 
 /* Navigation */
