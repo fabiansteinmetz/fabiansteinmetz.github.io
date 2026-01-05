@@ -5,25 +5,21 @@
 }
 
 body {
-    font-family: 'Crimson Pro', serif;
-    font-size: 1.1rem; /* Serifs need to be slightly larger to be readable */
-    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.015em; /* The secret to the "tight" modern look */
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 h1, h2, h3 {
-    font-family: 'Crimson Pro', serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
-}
-
-/* Keep navigation and buttons sans-serif for readability */
-.navbar, .btn-primary, .btn-secondary, .tag {
-    font-family: 'Lato', sans-serif;
-    font-size: 0.9rem;
+    letter-spacing: -0.03em;
 }
 
 .tag {
-    font-family: var(--font-mono); /* Makes your tags look like code */
-    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0;
 }
 
 /* Navigation */
