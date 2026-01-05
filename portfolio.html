@@ -167,6 +167,29 @@
                     <a href="https://github.com/fabiansteinmetz" class="btn-secondary">View Code</a>
                 </div>
             </div>
+
+             <div class="project-card">
+                <h3>5. SQL to CSV Streaming Converter</h3>
+                <p class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">ETL</span>
+                    <span class="tag">Finite State Machine</span>
+                    <span class="tag">Optimization</span>
+                </p>
+                <p>Developed a memory-efficient streaming parser to convert large SQL dump files (100MB+) into CSV format. Solved critical memory limitations of standard libraries by implementing a custom Finite State Machine that handles multi-line INSERTs, nested parentheses, and dynamic quoting without loading the full file.</p>
+                <p><strong>Key Results:</strong> Achieved O(1) memory complexity and linear processing speed (~50-100 MB/sec), enabling the migration of gigabytes of production data at Alpha Sophia.</p>
+
+                <div class="project-gallery">
+                    <img src="images/sql_parser_fsm.png" alt="Finite State Machine Logic Diagram" class="project-img">
+                    <img src="images/sql_parser_benchmark.png" alt="Memory Usage vs Standard Parsers" class="project-img">
+                </div>
+
+                <div class="action-buttons">
+                    <a href="project-sql-converter.html" class="btn-primary">View Project Details</a>
+                    <a href="https://github.com/fabiansteinmetz" class="btn-secondary">View Code</a>
+                </div>
+            </div>
+
         </section>
 
         <section class="portfolio-section">
