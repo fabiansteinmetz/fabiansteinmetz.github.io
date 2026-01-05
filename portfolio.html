@@ -5,6 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Fabian Steinmetz</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Added styles for the new image gallery and buttons */
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover; /* Ensures images are cropped neatly */
+            border-radius: 8px;
+            border: 1px solid #eee;
+            transition: transform 0.2s;
+        }
+
+        .project-img:hover {
+            transform: scale(1.02);
+            border-color: #ccc;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #007bff; /* Change to your theme color */
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #f8f9fa;
+            color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .btn-primary:hover { background-color: #0056b3; }
+        .btn-secondary:hover { background-color: #e2e6ea; }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -28,7 +80,7 @@
             <h2>Completed Projects</h2>
             
             <div class="project-card">
-                <h3>1. Wildfire Spread & Intervention Analysis Using Graph Theory and Cellular Automata</h3>
+                <h3>1. Wildfire Spread & Intervention Analysis</h3>
                 <p class="project-tags">
                     <span class="tag">Python</span>
                     <span class="tag">NetworkX</span>
@@ -36,7 +88,17 @@
                 </p>
                 <p>Modeled wildfire spread in Western Germany using a network-based cellular automaton simulation. Incorporated complex dynamics such as wind intensity, fuel usage, and rain events to assess regional fire risk. Evaluated the effectiveness of interventions like targeted forest thinning and network-based barriers.</p>
                 <p><strong>Key Results:</strong> Produced risk maps for Western Germany and demonstrated that targeted thinning significantly reduces average burnt area compared to random removal.</p>
-                <a href="https://github.com/fabiansteinmetz" class="project-link">View Code</a>
+                
+                <div class="project-gallery">
+                    <img src="images/wildfire_risk_map.png" alt="Risk Map of Western Germany" class="project-img">
+                    <img src="images/wildfire_thinning_graph.png" alt="Graph of Burnt Area vs Thinning Factor" class="project-img">
+                    <img src="images/wildfire_simulation.png" alt="Cellular Automaton Simulation Grid" class="project-img">
+                </div>
+
+                <div class="action-buttons">
+                    <a href="project-wildfire.html" class="btn-primary">View Project Report</a>
+                    <a href="https://github.com/fabiansteinmetz" class="btn-secondary">View Code</a>
+                </div>
             </div>
 
             <div class="project-card">
@@ -49,7 +111,16 @@
                 </p>
                 <p>Simulated traffic congestion in Berlin to analyze flow dynamics using density-based cellular automata rules. Modeled real-world road networks to investigate the relationship between structural "traffic pressure" and observed congestion.</p>
                 <p><strong>Key Results:</strong> Discovered a Power Law relationship (log-log linear) with a coefficient of ~1.06 between traffic pressure and average congestion.</p>
-                <a href="https://github.com/fabiansteinmetz" class="project-link">View Code</a>
+
+                <div class="project-gallery">
+                    <img src="images/traffic_loglog_plot.png" alt="Log-Log Plot of Traffic Pressure vs Congestion" class="project-img">
+                    <img src="images/berlin_network_grid.png" alt="Berlin Road Network Simulation" class="project-img">
+                </div>
+
+                <div class="action-buttons">
+                    <a href="project-traffic.html" class="btn-primary">View Project Report</a>
+                    <a href="https://github.com/fabiansteinmetz" class="btn-secondary">View Code</a>
+                </div>
             </div>
 
             <div class="project-card">
@@ -62,7 +133,17 @@
                 </p>
                 <p>Implemented a reaction-diffusion Cellular Automaton model to simulate Fox-Bunny population dynamics. Explored how spatial structure facilitates species coexistence and analyzed the stability conditions for population cycles.</p>
                 <p><strong>Key Results:</strong> Demonstrated the emergence of stable spatial patterns and identified critical growth rate thresholds for ecosystem viability.</p>
-                <a href="https://github.com/fabiansteinmetz" class="project-link">View Code</a>
+
+                <div class="project-gallery">
+                    <img src="images/predator_prey_phase_plot.png" alt="Phase Space Plot of Populations" class="project-img">
+                    <img src="images/spatial_patterns.png" alt="Spatial Pattern Formation Grid" class="project-img">
+                    <img src="images/population_cycles.png" alt="Time Series of Population Cycles" class="project-img">
+                </div>
+
+                <div class="action-buttons">
+                    <a href="project-predator-prey.html" class="btn-primary">View Project Report</a>
+                    <a href="https://github.com/fabiansteinmetz" class="btn-secondary">View Code</a>
+                </div>
             </div>
 
             <div class="project-card">
@@ -75,7 +156,16 @@
                 </p>
                 <p>Engineered a robust task scheduler using custom Min/Max Heap implementations to optimize daily productivity. The system handles task dependencies, fixed-time events, and dynamic prioritization based on difficulty and utility metrics.</p>
                 <p><strong>Key Results:</strong> Successfully automated the scheduling of complex daily routines, respecting constraints like "cannot mealprep before grocery shopping".</p>
-                <a href="https://github.com/fabiansteinmetz" class="project-link">View Code</a>
+
+                <div class="project-gallery">
+                    <img src="images/scheduler_runtime.png" alt="Runtime Analysis Plot" class="project-img">
+                    <img src="images/scheduler_gantt.png" alt="Schedule Visualization" class="project-img">
+                </div>
+
+                <div class="action-buttons">
+                    <a href="project-scheduler.html" class="btn-primary">View Project Report</a>
+                    <a href="https://github.com/fabiansteinmetz" class="btn-secondary">View Code</a>
+                </div>
             </div>
         </section>
 
@@ -93,7 +183,9 @@
                 <p><strong>Title:</strong> Does Going Slower Really Make Us Safer?</p>
                 <p>Evaluating the causal effect of Wales' 2023 default speed limit reduction (from 30 to 20mph) on collision rates. Utilizing a Difference-in-Differences approach with Two-Way Fixed Effects to estimate policy impact while controlling for confounding variables.</p>
                 <p><strong>Status:</strong> Final Project / Working Paper (Fall 2025)</p>
-                <a href="https://github.com/fabiansteinmetz" class="project-link">View Code</a>
+                <div class="action-buttons">
+                     <a href="https://github.com/fabiansteinmetz" class="project-link">View Code</a>
+                </div>
             </div>
 
             <div class="project-card wip">
@@ -107,7 +199,9 @@
                 <p><strong>Affiliation:</strong> Minerva Mathematical Modeling Research Group</p>
                 <p>Reproducing and extending non-linear epidemiological models by translating R-based Bayesian frameworks into PyMC. Implementing ODE-based SEIR dynamics with advanced sampling techniques (NUTS, HMC) for robust parameter estimation and uncertainty quantification.</p>
                 <p><strong>Status:</strong> Research Assistant (Aug 2025 - Present)</p>
-                <a href="https://github.com/fabiansteinmetz" class="project-link">View Code</a>
+                <div class="action-buttons">
+                    <a href="https://github.com/fabiansteinmetz" class="project-link">View Code</a>
+               </div>
             </div>
 
             <div class="project-card wip">
@@ -121,7 +215,9 @@
                 <p><strong>Co-authors:</strong> Prof. Ma (National Taiwan University), Ryan Li</p>
                 <p>Developing machine learning pipelines to generate sustainability indicators for Tanzanian smallholder farms using 2021 National Panel Survey data. Using clustering analysis and random forests to identify key drivers of environmental and economic sustainability.</p>
                 <p><strong>Status:</strong> Manuscript in preparation</p>
-                <a href="https://github.com/fabiansteinmetz" class="project-link">View Code</a>
+                <div class="action-buttons">
+                    <a href="https://github.com/fabiansteinmetz" class="project-link">View Code</a>
+               </div>
             </div>
 
             <div class="project-card wip">
@@ -135,7 +231,9 @@
                 <p><strong>Company:</strong> Andgreen Ldt., Taipei</p>
                 <p>Leading a team to prototype an iOS application that allows Taiwanese companies to capture "invisible" sustainable actions for their ESG records. Responsible for front-end development using React Native and UI/UX design in Figma.</p>
                 <p><strong>Status:</strong> App Development Intern (Aug 2024 - Jan 2025)</p>
-                <a href="https://github.com/fabiansteinmetz" class="project-link">View Code</a>
+                <div class="action-buttons">
+                    <a href="https://github.com/fabiansteinmetz" class="project-link">View Code</a>
+               </div>
             </div>
         </section>
 
