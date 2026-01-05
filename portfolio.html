@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Fabian Steinmetz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Fabian Steinmetz</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="resume.html" class="nav-link">Resume</a></li>
+                <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="page-header">
+            <h1>Portfolio</h1>
+            <p>A collection of my research projects and technical work</p>
+        </header>
+
+        <section class="portfolio-section">
+            <h2>📊 Featured Projects</h2>
+            
+            <div class="project-card">
+                <h3>1. Epidemiological Compartmental Model with Bayesian Inference</h3>
+                <p class="project-tags">
+                    <span class="tag">PyMC</span>
+                    <span class="tag">SciPy</span>
+                    <span class="tag">NUTS/HMC</span>
+                    <span class="tag">Bayesian Inference</span>
+                </p>
+                <p>Reproduced and extended a non-linear epidemiological model with hierarchical Bayesian inference. Implemented ODE-based SEIR dynamics with advanced sampling techniques (NUTS, HMC, custom MCMC) for parameter estimation and uncertainty quantification. Compared multiple model specifications using WAIC and LOO cross-validation.</p>
+                <p><strong>Key Results:</strong> Successfully translated R-based models to PyMC, achieving convergence on complex hierarchical structures and providing robust uncertainty estimates for disease dynamics parameters.</p>
+                <a href="#" class="project-link">View Project →</a>
+            </div>
+
+            <div class="project-card">
+                <h3>2. Healthcare Professional Publication Matching System</h3>
+                <p class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">Snowflake</span>
+                    <span class="tag">PMI Analysis</span>
+                </p>
+                <p>Developed probabilistic matching algorithm to link 3.9M healthcare professionals with 25M+ PubMed publications at Alpha Sophia. Implemented custom scoring functions combining pointwise mutual information (PMI) analysis, k-means clustering, and email auto-complete algorithms.</p>
+                <p><strong>Key Results:</strong> Achieved 103% improvement in match rates, deployed to production in July 2025. Engineered complete SQL/XML database structure for clinical trials integration.</p>
+                <a href="#" class="project-link">View Project →</a>
+            </div>
+
+            <div class="project-card">
+                <h3>3. Sustainable Agriculture ML Indicators</h3>
+                <p class="project-tags">
+                    <span class="tag">Random Forest</span>
+                    <span class="tag">scikit-learn</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">ETL</span>
+                </p>
+                <p>Created machine learning pipeline to generate sustainability indicators for Tanzanian farms using 2021 National Panel Survey data. Implemented comprehensive ETL processes, clustering analysis, and interactive visualizations to identify key sustainability drivers in smallholder agriculture.</p>
+                <p><strong>Key Results:</strong> Identified top predictive features for farm sustainability; co-authoring research paper on ML applications in environmental sustainability (in progress).</p>
+                <a href="#" class="project-link">View Project →</a>
+            </div>
+
+            <div class="project-card">
+                <h3>4. Carbon Capture Mineral Carbonation Analysis</h3>
+                <p class="project-tags">
+                    <span class="tag">Chemical Modeling</span>
+                    <span class="tag">Data Analysis</span>
+                    <span class="tag">Python</span>
+                </p>
+                <p>Analyzed experimental data from mineral carbonation processes for CO₂ sequestration at Korea Institute of Science and Technology. Performed chemical protocols and modeled conversion efficiency of CO₂ to Na₂CO₃, optimizing reaction parameters for industrial-scale carbon capture.</p>
+                <p><strong>Key Results:</strong> Evaluated multiple carbonation pathways and identified optimal conditions for mineral carbonation efficiency.</p>
+                <a href="#" class="project-link">View Project →</a>
+            </div>
+
+            <div class="project-card">
+                <h3>5. Unity Robot Simulator with Digital Twin Integration</h3>
+                <p class="project-tags">
+                    <span class="tag">Unity</span>
+                    <span class="tag">C#</span>
+                    <span class="tag">Robotics</span>
+                    <span class="tag">API Design</span>
+                </p>
+                <p>Built 3D robot simulator for educational purposes with external API connections at Universidad Abierta Interamericana. Enables integration between physical robots and digital twins, facilitating hands-on learning in AI, robotics, and programming courses.</p>
+                <p><strong>Key Results:</strong> Created flexible platform for robot simulation with real-time synchronization capabilities for teaching environments.</p>
+                <a href="#" class="project-link">View Project →</a>
+            </div>
+        </section>
+
+        <section class="portfolio-section">
+            <h2>📝 Working Papers & Projects in Progress</h2>
+            
+            <div class="project-card wip">
+                <h3>Machine Learning Applications in Tanzanian Agricultural Sustainability</h3>
+                <p class="project-tags">
+                    <span class="tag">Research Paper</span>
+                    <span class="tag">In Progress</span>
+                </p>
+                <p><strong>Co-authors:</strong> Prof. Ma (National Taiwan University), Ryan Li (PhD Candidate)</p>
+                <p>Comprehensive analysis of machine learning techniques for predicting and measuring sustainability outcomes in Tanzanian smallholder farms. Using 2021 NPS data to develop novel indicators that capture multiple dimensions of agricultural sustainability including environmental impact, economic viability, and social outcomes.</p>
+                <p><strong>Status:</strong> Manuscript in preparation, expected submission Q2 2026</p>
+            </div>
+
+            <div class="project-card wip">
+                <h3>Hierarchical Bayesian Models for Disease Dynamics</h3>
+                <p class="project-tags">
+                    <span class="tag">Research Project</span>
+                    <span class="tag">In Progress</span>
+                </p>
+                <p><strong>Affiliation:</strong> Minerva Mathematical Modeling Research Group</p>
+                <p>Developing novel extensions to traditional compartmental epidemiological models using hierarchical Bayesian frameworks. Incorporating spatial heterogeneity, age-structured populations, and time-varying transmission rates. Implementing efficient MCMC algorithms for parameter inference in high-dimensional model spaces.</p>
+                <p><strong>Status:</strong> Active research, computational implementation phase</p>
+            </div>
+        </section>
+
+        <section class="portfolio-section">
+            <h2>🔗 Additional Links</h2>
+            <div class="links-grid">
+                <a href="https://github.com/fabiansteinmetz" target="_blank" class="link-card">
+                    <h3>💻 GitHub</h3>
+                    <p>View my code repositories and open-source contributions</p>
+                </a>
+                <a href="https://linkedin.com/in/fabiansteinmetz" target="_blank" class="link-card">
+                    <h3>💼 LinkedIn</h3>
+                    <p>Connect with me professionally</p>
+                </a>
+                <a href="mailto:fabian@uni.minerva.edu" class="link-card">
+                    <h3>📧 Contact</h3>
+                    <p>Get in touch for collaborations or opportunities</p>
+                </a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
