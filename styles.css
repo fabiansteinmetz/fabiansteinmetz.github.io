@@ -4,24 +4,28 @@
     box-sizing: border-box;
 }
 
+:root {
+    --font-heading: 'IBM Plex Serif', serif;
+    --font-body: 'IBM Plex Sans', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+}
+
 body {
-    font-family: 'Inter', sans-serif;
-    letter-spacing: -0.015em; /* The secret to the "tight" modern look */
-    font-size: 0.95rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem; /* Slightly smaller because Plex is very clear */
     line-height: 1.6;
+    color: #333;
 }
 
 h1, h2, h3 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.03em;
+    font-family: var(--font-heading);
+    letter-spacing: -0.5px; /* Makes headers look tighter and professional */
 }
 
 .tag {
-    font-weight: 600;
-    letter-spacing: 0;
+    font-family: var(--font-mono); /* Makes your tags look like code */
+    font-size: 0.8rem;
 }
-
 /* Navigation */
 .navbar {
     background-color: #fff;
