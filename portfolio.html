@@ -9,23 +9,27 @@
         /* Added styles for the new image gallery and buttons */
         .project-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+            /* Creates columns that are at least 250px wide, but stretch to fit */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 1.5rem;
             margin: 1.5rem 0;
         }
         
         .project-img {
             width: 100%;
-            height: 150px;
-            object-fit: cover; /* Ensures images are cropped neatly */
+            height: auto; /* FIX: Lets the image determine its own height */
+            max-height: 400px; /* Optional: prevents extremely tall images from taking over */
+            object-fit: contain; /* FIX: Ensures the whole image is seen, never cropped */
             border-radius: 8px;
             border: 1px solid #eee;
+            background-color: #fff; /* Adds white background for transparent plots */
             transition: transform 0.2s;
         }
 
         .project-img:hover {
-            transform: scale(1.02);
+            transform: scale(1.01);
             border-color: #ccc;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .action-buttons {
