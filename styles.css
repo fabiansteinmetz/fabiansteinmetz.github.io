@@ -5,39 +5,33 @@
 }
 
 :root {
-    --font-heading: 'IBM Plex Serif', serif;
-    --font-body: 'IBM Plex Sans', sans-serif;
-    --font-mono: 'IBM Plex Mono', monospace;
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --light-gray: #ecf0f1;
+    --border-color: #bdc3c7;
 }
 
 body {
-    font-family: var(--font-body);
-    font-size: 0.95rem; /* Slightly smaller because Plex is very clear */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: var(--text-color);
+    background-color: #fff;
 }
 
-h1, h2, h3 {
-    font-family: var(--font-heading);
-    letter-spacing: -0.5px; /* Makes headers look tighter and professional */
-}
-
-.tag {
-    font-family: var(--font-mono); /* Makes your tags look like code */
-    font-size: 0.8rem;
-}
 /* Navigation */
 .navbar {
-    background-color: #fff;
-    padding: 0.8rem 0;
-    border-bottom: 1px solid var(--border-color);
+    background-color: var(--primary-color);
+    padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .nav-container {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
@@ -46,9 +40,9 @@ h1, h2, h3 {
 }
 
 .nav-logo {
-    color: var(--primary-color);
-    font-size: 1.1rem;
-    font-weight: 600;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
     text-decoration: none;
 }
 
@@ -59,194 +53,177 @@ h1, h2, h3 {
 }
 
 .nav-link {
-    color: var(--secondary-color);
+    color: white;
     text-decoration: none;
-    font-weight: 400;
-    font-size: 0.95rem;
-    transition: color 0.2s;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 /* Landing Page */
 .landing {
-    min-height: calc(100vh - 60px);
+    height: calc(100vh - 60px);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 4rem 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--light-gray) 0%, #ffffff 100%);
 }
 
 .landing-content {
-    max-width: 600px;
+    max-width: 700px;
 }
 
 .profile-pic {
-    width: 140px;
-    height: 140px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 1.5rem;
-    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+    border: 5px solid var(--secondary-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 .landing h1 {
-    font-size: 2rem;
+    font-size: 3rem;
     color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
 .subtitle {
-    font-size: 1rem;
+    font-size: 1.3rem;
     color: var(--secondary-color);
-    margin-bottom: 1rem;
-    font-weight: 400;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
 }
 
 .bio {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     color: var(--text-color);
     margin-bottom: 2rem;
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
 .social-links {
     display: flex;
-    gap: 0.8rem;
+    gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .social-btn {
     display: inline-block;
-    padding: 0.5rem 1.2rem;
-    background-color: #fff;
-    color: var(--primary-color);
+    padding: 0.8rem 1.5rem;
+    background-color: var(--secondary-color);
+    color: white;
     text-decoration: none;
-    border: 1px solid var(--border-color);
-    font-weight: 400;
-    font-size: 0.9rem;
-    transition: all 0.2s;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s;
 }
 
 .social-btn:hover {
     background-color: var(--primary-color);
-    color: #fff;
-    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* Container */
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 2rem 2rem 4rem;
+    padding: 3rem 2rem;
 }
 
 /* Page Header */
 .page-header {
-    margin-bottom: 2.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 3px solid var(--secondary-color);
 }
 
 .page-header h1 {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     color: var(--primary-color);
-    margin-bottom: 0.8rem;
-    font-weight: 600;
-}
-
-.page-header p {
-    color: var(--secondary-color);
-    font-size: 0.95rem;
+    margin-bottom: 1rem;
 }
 
 .download-btn {
     display: inline-block;
     margin-top: 1rem;
-    padding: 0.5rem 1.2rem;
-    background-color: var(--primary-color);
+    padding: 0.8rem 1.5rem;
+    background-color: var(--accent-color);
     color: white;
     text-decoration: none;
-    font-weight: 400;
-    font-size: 0.9rem;
-    transition: all 0.2s;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s;
 }
 
 .download-btn:hover {
-    background-color: var(--accent-color);
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* Resume Sections */
 .resume-section {
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
 }
 
 .resume-section h2 {
     color: var(--primary-color);
-    font-size: 1.3rem;
-    margin-bottom: 1.2rem;
-    font-weight: 600;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light-gray);
 }
 
 .resume-item {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--light-gray);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.resume-item:last-child {
-    border-bottom: none;
+.resume-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .resume-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 0.3rem;
-    gap: 1rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
 }
 
 .resume-item h3 {
     color: var(--primary-color);
-    font-size: 1.05rem;
-    font-weight: 600;
-    margin-bottom: 0.2rem;
-}
-
-.resume-item .subtitle {
-    color: var(--secondary-color);
-    font-size: 0.9rem;
-    margin-bottom: 0.3rem;
+    font-size: 1.3rem;
 }
 
 .date {
     color: var(--secondary-color);
-    font-weight: 400;
-    font-size: 0.85rem;
-    white-space: nowrap;
-}
-
-.resume-item p {
-    color: var(--text-color);
-    font-size: 0.9rem;
-    margin-bottom: 0.3rem;
+    font-weight: 600;
+    font-size: 0.95rem;
 }
 
 .resume-item ul {
-    margin-left: 1.2rem;
+    margin-left: 1.5rem;
     margin-top: 0.5rem;
 }
 
 .resume-item li {
-    margin-bottom: 0.4rem;
-    font-size: 0.9rem;
-    line-height: 1.5;
+    margin-bottom: 0.5rem;
 }
 
 .awards-list {
@@ -255,162 +232,130 @@ h1, h2, h3 {
 }
 
 .awards-list li {
-    padding: 0.6rem 0;
-    margin-bottom: 0.4rem;
-    font-size: 0.9rem;
-    border-bottom: 1px solid var(--light-gray);
-}
-
-.awards-list li:last-child {
-    border-bottom: none;
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+    background-color: var(--light-gray);
+    border-radius: 5px;
+    border-left: 4px solid var(--secondary-color);
 }
 
 /* Skills Grid */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .skill-category {
-    padding: 1rem;
+    padding: 1.5rem;
     background-color: var(--light-gray);
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
 }
 
 .skill-category h3 {
     color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
-    font-weight: 600;
-}
-
-.skill-category p {
-    font-size: 0.85rem;
-    line-height: 1.5;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
 }
 
 /* Portfolio */
 .portfolio-section {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 .portfolio-section h2 {
     color: var(--primary-color);
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light-gray);
 }
 
 .project-card {
-    padding: 1.5rem 0;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background-color: white;
+    border: 2px solid var(--light-gray);
+    border-radius: 10px;
+    transition: all 0.3s;
 }
 
-.project-card:last-child {
-    border-bottom: none;
+.project-card:hover {
+    border-color: var(--secondary-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
 }
 
 .project-card.wip {
-    border-left: 2px solid var(--primary-color);
-    padding-left: 1rem;
+    border-left: 5px solid var(--accent-color);
 }
 
 .project-card h3 {
     color: var(--primary-color);
-    font-size: 1.05rem;
-    margin-bottom: 0.6rem;
-    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
 }
 
 .project-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 0.8rem;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .tag {
     display: inline-block;
-    padding: 0.2rem 0.6rem;
-    background-color: var(--light-gray);
-    color: var(--text-color);
-    font-size: 0.8rem;
-    font-weight: 400;
+    padding: 0.3rem 0.8rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
 }
 
 .project-card p {
-    margin-bottom: 0.8rem;
-    line-height: 1.6;
-    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.7;
 }
 
 .project-link {
     display: inline-block;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     text-decoration: none;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: color 0.2s;
+    font-weight: 600;
+    transition: color 0.3s;
 }
 
 .project-link:hover {
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 /* Links Grid */
 .links-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .link-card {
-    padding: 1.2rem;
+    padding: 2rem;
     background-color: var(--light-gray);
+    border-radius: 8px;
     text-decoration: none;
     color: inherit;
-    transition: background-color 0.2s;
+    transition: all 0.3s;
+    border: 2px solid transparent;
 }
 
 .link-card:hover {
-    background-color: #ebebeb;
+    border-color: var(--secondary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .link-card h3 {
     color: var(--primary-color);
-    margin-bottom: 0.4rem;
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-.link-card p {
-    font-size: 0.85rem;
-    color: var(--secondary-color);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .landing h1 {
-        font-size: 1.6rem;
-    }
-    
-    .nav-menu {
-        gap: 1rem;
-    }
-    
-    .resume-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .date {
-        margin-top: 0.2rem;
-    }
-    
-    .container {
-        padding: 1.5rem 1.5rem 3rem;
-    }
-}
+    margin
