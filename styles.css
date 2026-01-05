@@ -4,22 +4,21 @@
     box-sizing: border-box;
 }
 
-:root {
-    --font-heading: 'IBM Plex Serif', serif;
-    --font-body: 'IBM Plex Sans', sans-serif;
-    --font-mono: 'IBM Plex Mono', monospace;
-}
-
 body {
-    font-family: var(--font-body);
-    font-size: 0.95rem; /* Slightly smaller because Plex is very clear */
-    line-height: 1.6;
-    color: #333;
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.1rem; /* Serifs need to be slightly larger to be readable */
+    line-height: 1.5;
 }
 
 h1, h2, h3 {
-    font-family: var(--font-heading);
-    letter-spacing: -0.5px; /* Makes headers look tighter and professional */
+    font-family: 'Crimson Pro', serif;
+    font-weight: 700;
+}
+
+/* Keep navigation and buttons sans-serif for readability */
+.navbar, .btn-primary, .btn-secondary, .tag {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
 }
 
 .tag {
