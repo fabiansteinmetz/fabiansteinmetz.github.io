@@ -298,3 +298,110 @@ a {
     .action-buttons { flex-direction: column; }
     .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
 }
+
+/* --- LANDING PAGE SPECIFIC STYLES --- */
+
+/* 1. Profile Header: Centered & Compact */
+.profile-section {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-pic {
+    width: 120px;       /* Smaller, compact size */
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    filter: grayscale(100%); /* Optional: B&W photo fits the theme */
+    transition: filter 0.3s;
+}
+
+.profile-pic:hover {
+    filter: grayscale(0%); /* Color returns on hover */
+}
+
+.profile-section h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.role-title {
+    font-family: var(--font-mono);
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+/* 2. Social/Contact Icons (Minimal Text Links) */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}
+
+.social-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+.social-link:hover {
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+}
+
+/* 3. Bio Text: Narrow measure for readability */
+.bio-content {
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    text-align: left; /* Easier to read than centered text */
+}
+
+.bio-content p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+/* 4. Research Interests Grid (Compact) */
+.interests-section h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.interest-item {
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.interest-item strong {
+    display: block;
+    font-family: var(--font-body);
+    color: var(--primary-color);
+    margin-bottom: 0.2rem;
+}
+
+.interest-item span {
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+    font-family: var(--font-mono);
+}
