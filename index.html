@@ -3,36 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabian Steinmetz</title>
+    <title>Fabian Steinmetz - Researcher</title>
     <link rel="stylesheet" href="styles.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;700&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">Fabian Steinmetz</a>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html" class="nav-link active">Home</a></li>
                 <li><a href="resume.html" class="nav-link">Resume</a></li>
                 <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="landing">
-        <div class="landing-content">
-            <img src="profile.jpg" alt="Fabian Steinmetz" class="profile-pic">
+    <div class="container">
+        
+        <header class="profile-section">
+            <img src="images/profile.jpg" alt="Fabian Steinmetz" class="profile-pic">
+            
             <h1>Fabian Steinmetz</h1>
-            <p class="subtitle">Computer Science & Mathematics Student @ Minerva University</p>
-            <p class="subtitle">Curious and learning about: Bayesian Inference - Data Science - Applied Mathematics - Statistical Mechanics</p>
+            <p class="role-title">CS & Math Undergraduate | Minerva University</p>
+            
             <div class="social-links">
-                <a href="mailto:fabian@uni.minerva.edu" class="social-btn">Email</a>
-                <a href="https://linkedin.com/in/fabiansteinmetz" target="_blank" class="social-btn">LinkedIn</a>
-                <a href="https://github.com/fabiansteinmetz" target="_blank" class="social-btn">GitHub</a>
+                <a href="mailto:fabian@uni.minerva.edu" class="social-link">Email</a>
+                <a href="https://github.com/fabiansteinmetz" target="_blank" class="social-link">GitHub</a>
+                <a href="https://linkedin.com/in/fabiansteinmetz" target="_blank" class="social-link">LinkedIn</a>
+                <a href="portfolio.html" class="social-link">View Projects →</a>
             </div>
-        </div>
-    </section>
+        </header>
+
+        <section class="bio-content">
+            <p>
+                I am an undergraduate researcher pursuing a double major in <strong>Computer Science</strong> and <strong>Mathematics</strong> at Minerva University. My work focuses on the intersection of complex systems modeling, Bayesian statistics, and machine learning.
+            </p>
+            <p>
+                Currently, I am working with the <em>Minerva Mathematical Modeling Research Group</em> on epidemiological simulations using PyMC. Previously, I interned as an App Developer in Taipei and a Data Analyst at Alpha Sophia.
+            </p>
+            <p>
+                My goal is to apply computational methods to solve systemic problems in public health, urban planning, and environmental sustainability.
+            </p>
+        </section>
+
+        <section class="interests-section">
+            <h2>Research Focus</h2>
+            <div class="interests-grid">
+                <div class="interest-item">
+                    <strong>Bayesian Inference</strong>
+                    <span>PyMC, Hierarchical Models</span>
+                </div>
+                <div class="interest-item">
+                    <strong>Complex Systems</strong>
+                    <span>Cellular Automata, Networks</span>
+                </div>
+                <div class="interest-item">
+                    <strong>Applied ML</strong>
+                    <span>Random Forests, Scikit-learn</span>
+                </div>
+                <div class="interest-item">
+                    <strong>Policy Analysis</strong>
+                    <span>Diff-in-Diff, Causal Inference</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
 </body>
 </html>
