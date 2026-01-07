@@ -5,92 +5,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Fabian Steinmetz</title>
     <link rel="stylesheet" href="styles.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;700&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+
     <style>
-    /* Grid layout for the gallery */
-    .project-gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-        gap: 1.5rem;
-        margin: 1.5rem 0;
-    }
-    
-    /* 1. The Container: Cuts off the image and holds the fade */
-    .teaser-wrapper {
-        position: relative; /* Needed to position the fade overlay */
-        height: 120px;      /* CHANGE THIS VALUE to make the teaser taller/shorter */
-        overflow: hidden;   /* Cuts off anything sticking out */
-        border-radius: 8px;
-        border: 1px solid #eee;
-        background-color: #fff;
-        transition: transform 0.2s, border-color 0.2s;
-        cursor: pointer;    /* Suggests interactivity */
-    }
+        /* --- ACADEMIC PORTFOLIO SPECIFIC STYLES --- */
 
-    /* 2. The Fade Effect: A ghost layer on top */
-    .teaser-wrapper::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 60px; /* How tall the fade gradient is */
-        /* Gradient from transparent (top) to white (bottom) */
-        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-        pointer-events: none; /* Lets clicks pass through if needed */
-    }
+        /* 1. The Grid: Compact and aligned */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
 
-    /* Hover Effect: darker border and slight lift */
-    .teaser-wrapper:hover {
-        transform: translateY(-2px);
-        border-color: #bbb;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
+        /* 2. The Card: Minimalist, no heavy shadows */
+        .project-card {
+            border: 1px solid #eee;
+            padding: 0; /* Removing padding to let image sit flush if needed */
+            background: #fff;
+            transition: border-color 0.2s;
+        }
 
-    /* 3. The Image: Full width, natural height */
-    .project-img {
-        width: 100%;
-        height: auto; 
-        display: block;
-    }
+        .project-card:hover {
+            border-color: #999;
+        }
 
-    /* Button Styles (Unchanged) */
-    .action-buttons {
-        display: flex;
-        gap: 1rem;
-        margin-top: 1.5rem;
-        flex-wrap: wrap;
-    }
+        /* 3. The Image: Crisp, smaller, grayscale-to-color on hover */
+        .image-container {
+            height: 140px; /* Reduced height for compactness */
+            width: 100%;
+            overflow: hidden;
+            border-bottom: 1px solid #eee;
+            background-color: #f9f9f9;
+        }
 
-    .btn-primary {
-        display: inline-block;
-        padding: 0.6rem 1.2rem;
-        background-color: #007bff;
-        color: white;
-        text-decoration: none;
-        border-radius: 4px;
-        font-weight: bold;
-        font-size: 0.95rem;
-    }
+        .project-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%); /* Academic look: B&W by default */
+            transition: filter 0.3s, transform 0.3s;
+        }
 
-    .btn-secondary {
-        display: inline-block;
-        padding: 0.6rem 1.2rem;
-        background-color: #f8f9fa;
-        color: #333;
-        text-decoration: none;
-        border-radius: 4px;
-        border: 1px solid #ddd;
-        font-size: 0.95rem;
-    }
+        .project-card:hover .project-img {
+            filter: grayscale(0%); /* Color on hover */
+            transform: scale(1.02);
+        }
 
-    .btn-primary:hover { background-color: #0056b3; }
-    .btn-secondary:hover { background-color: #e2e6ea; }
-</style>
+        /* 4. The Content: Dense and Typographic */
+        .card-content {
+            padding: 1rem;
+        }
+
+        .project-card h3 {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+            color: #000;
+        }
+
+        /* Tags: Text-only, separated by pipes or spaces */
+        .project-meta {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: #666;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .project-desc {
+            font-size: 0.85rem;
+            color: #333;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+        }
+
+        .key-result {
+            font-size: 0.8rem;
+            color: #555;
+            font-style: italic;
+            border-left: 2px solid #ccc;
+            padding-left: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        /* 5. Links: Academic Style (Text anchors) */
+        .project-links {
+            margin-top: 1rem;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+        }
+
+        .text-link {
+            color: #000;
+            text-decoration: none;
+            margin-right: 1rem;
+            border-bottom: 1px solid #ccc;
+            transition: all 0.2s;
+        }
+
+        .text-link:hover {
+            border-bottom: 1px solid #000;
+            background-color: #f0f0f0;
+        }
+
+        /* Headers */
+        .section-title {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid #000;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            margin-top: 1rem;
+        }
+    </style>
 </head>
 <body>
+
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">Fabian Steinmetz</a>
@@ -103,219 +140,170 @@
     </nav>
 
     <div class="container">
-        <header class="page-header">
-            <h1>Portfolio</h1>
-            <p>A collection of my academic and research projects as well as technical work.</p>
+        
+        <header style="margin-bottom: 3rem; margin-top: 2rem;">
+            <h1 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Research & Projects</h1>
+            <p style="color: #666; max-width: 600px;">
+                Selected work in complex systems, Bayesian statistics, and computational modeling.
+            </p>
         </header>
 
-        <section class="portfolio-section">
-            <h2>Selected Academic Projects</h2>
+        <h2 class="section-title">Academic Projects</h2>
+        
+        <div class="project-grid">
+
+            <article class="project-card">
+                <div class="image-container">
+                     <img src="images/wildfire_risk_map.png" alt="Wildfire Risk Map" class="project-img">
+                </div>
+                <div class="card-content">
+                    <h3>Wildfire Spread & Intervention Analysis</h3>
+                    <span class="project-meta">Python | NetworkX | CA | Vectorization</span>
+                    <p class="project-desc">
+                        Modeled wildfire spread in Western Germany using a network-based cellular automaton. Incorporated wind, fuel, and rain dynamics to assess risk and intervention efficacy.
+                    </p>
+                    <div class="key-result">
+                        Result: Targeted thinning significantly reduces average burnt area compared to random removal.
+                    </div>
+                    <div class="project-links">
+                        <a href="project-wildfire.html" class="text-link">[ Read Report ]</a>
+                        <a href="https://github.com/fabiansteinmetz" class="text-link">[ View Code ]</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="image-container">
+                    <img src="images/berlin_network_grid.png" alt="Berlin Traffic Simulation" class="project-img">
+                </div>
+                <div class="card-content">
+                    <h3>Berlin Traffic Modeling</h3>
+                    <span class="project-meta">OSMnx | Discrete State Simulation | Complex Systems</span>
+                    <p class="project-desc">
+                        Simulated congestion flow dynamics in Berlin using real-world road networks. Investigated the relationship between structural "traffic pressure" and observed congestion.
+                    </p>
+                    <div class="key-result">
+                        Result: Identified Power Law relationship (~1.06) between pressure and congestion.
+                    </div>
+                    <div class="project-links">
+                        <a href="project-traffic.html" class="text-link">[ Read Report ]</a>
+                        <a href="https://github.com/fabiansteinmetz" class="text-link">[ View Code ]</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="image-container">
+                    <img src="images/spatial_patterns.png" alt="Predator Prey Patterns" class="project-img">
+                </div>
+                <div class="card-content">
+                    <h3>Predator-Prey Ecosystem Sensitivity</h3>
+                    <span class="project-meta">Python | Matplotlib | Dynamics</span>
+                    <p class="project-desc">
+                        Implemented a reaction-diffusion Cellular Automaton to simulate Fox-Bunny dynamics. Explored spatial structure facilitateing species coexistence.
+                    </p>
+                    <div class="key-result">
+                        Result: Identified critical growth rate thresholds for ecosystem viability.
+                    </div>
+                    <div class="project-links">
+                        <a href="project-predator-prey.html" class="text-link">[ Read Report ]</a>
+                        <a href="https://github.com/fabiansteinmetz" class="text-link">[ View Code ]</a>
+                    </div>
+                </div>
+            </article>
+
+             <article class="project-card">
+                <div class="image-container">
+                    <img src="images/football_posterior.png" alt="Bayesian Football Model" class="project-img">
+                </div>
+                <div class="card-content">
+                    <h3>Bayesian Modeling of Football Attendance</h3>
+                    <span class="project-meta">PyMC | Hierarchical Models | Predictive Modeling</span>
+                    <p class="project-desc">
+                        Compared Poisson and Negative Binomial regression models to decouple team popularity from scheduling factors in the Argentine Primera División.
+                    </p>
+                    <div class="key-result">
+                        Result: Generated calibrated predictions (MAE < 5%) and quantified "weekend effects."
+                    </div>
+                    <div class="project-links">
+                        <a href="project-football.html" class="text-link">[ Read Report ]</a>
+                        <a href="https://github.com/fabiansteinmetz" class="text-link">[ View Code ]</a>
+                    </div>
+                </div>
+            </article>
+
+             <article class="project-card">
+                <div class="image-container">
+                    <img src="images/education_robust_regression.png" alt="Education Inequality Regression" class="project-img">
+                </div>
+                <div class="card-content">
+                    <h3>Educational Inequality in Argentina</h3>
+                    <span class="project-meta">Robust Regression | Student-T Likelihood | Policy</span>
+                    <p class="project-desc">
+                        Investigated the relationship between socioeconomic factors and math test scores. Compared Normal vs. Student-T likelihoods to handle heavy-tailed data.
+                    </p>
+                    <div class="key-result">
+                        Result: Student-T model revealed conventional models underestimate SES impact.
+                    </div>
+                    <div class="project-links">
+                        <a href="project-education-inequality.html" class="text-link">[ Read Report ]</a>
+                        <a href="https://github.com/fabiansteinmetz" class="text-link">[ View Code ]</a>
+                    </div>
+                </div>
+            </article>
             
-            <div class="project-card">
-                <h3>Network Theory and Cellular Automata: Wildfire Spread & Intervention Analysis</h3>
-                <p class="project-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">NetworkX</span>
-                    <span class="tag">Vectorization</span>
-                </p>
-                <p>Modeled wildfire spread in Western Germany using a network-based cellular automaton simulation. Incorporated complex dynamics such as wind intensity, fuel usage, and rain events to assess regional fire risk. Evaluated the effectiveness of interventions like targeted forest thinning and network-based barriers.</p>
-                <p><strong>Key Results:</strong> Produced risk maps for Western Germany and demonstrated that targeted thinning significantly reduces average burnt area compared to random removal.</p>
-                
-                <div class="project-gallery">
-                    <img src="images/wildfire_risk_map.png" alt="Risk Map of Western Germany" class="project-img">
-                    <img src="images/wildfire_thinning_graph.png" alt="Graph of Burnt Area vs Thinning Factor" class="project-img">
-                    <img src="images/wildfire_simulation.png" alt="Cellular Automaton Simulation Grid" class="project-img">
+            <article class="project-card">
+                <div class="image-container">
+                    <img src="images/sql_parser_fsm.png" alt="SQL FSM Diagram" class="project-img">
                 </div>
-
-                <div class="action-buttons">
-                    <a href="project-wildfire.html" class="btn-primary">View Project Report</a>
-                    <a href="https://github.com/fabiansteinmetz" class="btn-secondary">View Code</a>
+                <div class="card-content">
+                    <h3>SQL to CSV Streaming Converter</h3>
+                    <span class="project-meta">Python | ETL | Finite State Machine</span>
+                    <p class="project-desc">
+                        Developed a memory-efficient streaming parser for 5GB+ SQL dumps. Handled multi-line inserts and dynamic quoting via custom FSM.
+                    </p>
+                    <div class="key-result">
+                        Result: Achieved O(1) memory complexity and ~100 MB/sec processing speed.
+                    </div>
+                    <div class="project-links">
+                        <a href="project-sql-converter.html" class="text-link">[ View Details ]</a>
+                        <a href="https://github.com/fabiansteinmetz" class="text-link">[ View Code ]</a>
+                    </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="project-card">
-                <h3>Discrete State Simulations: Berlin Traffic Modeling</h3>
-                <p class="project-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">OSMnx</span>
-                    <span class="tag">Traffic Simulation</span>
-                    <span class="tag">Complex Systems</span>
-                </p>
-                <p>Simulated traffic congestion in Berlin to analyze flow dynamics using density-based cellular automata rules. Modeled real-world road networks to investigate the relationship between structural "traffic pressure" and observed congestion.</p>
-                <p><strong>Key Results:</strong> Discovered a Power Law relationship (log-log linear) with a coefficient of ~1.06 between traffic pressure and average congestion.</p>
+        </div>
 
-                <div class="project-gallery">
-                    <img src="images/traffic_loglog_plot.png" alt="Log-Log Plot of Traffic Pressure vs Congestion" class="project-img">
-                    <img src="images/berlin_network_grid.png" alt="Berlin Road Network Simulation" class="project-img">
-                </div>
-
-                <div class="action-buttons">
-                    <a href="project-traffic.html" class="btn-primary">View Project Report</a>
-                    <a href="https://github.com/fabiansteinmetz" class="btn-secondary">View Code</a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <h3>Sensitivity Analysis with Cellular Automata: Predator-Prey Ecosystem Modeling & Simulation</h3>
-                <p class="project-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Ecological Modeling</span>
-                    <span class="tag">Matplotlib</span>
-                    <span class="tag">Dynamics</span>
-                </p>
-                <p>Implemented a reaction-diffusion Cellular Automaton model to simulate Fox-Bunny population dynamics. Explored how spatial structure facilitates species coexistence and analyzed the stability conditions for population cycles.</p>
-                <p><strong>Key Results:</strong> Demonstrated the emergence of stable spatial patterns and identified critical growth rate thresholds for ecosystem viability.</p>
-
-                <div class="project-gallery">
-                    <img src="images/predator_prey_phase_plot.png" alt="Phase Space Plot of Populations" class="project-img">
-                    <img src="images/spatial_patterns.png" alt="Spatial Pattern Formation Grid" class="project-img">
-                    <img src="images/population_cycles.png" alt="Time Series of Population Cycles" class="project-img">
-                </div>
-
-                <div class="action-buttons">
-                    <a href="project-predator-prey.html" class="btn-primary">View Project Report</a>
-                    <a href="https://github.com/fabiansteinmetz" class="btn-secondary">View Code</a>
-                </div>
-            </div>
-
-
-             <div class="project-card">
-                <h3>SQL to CSV Streaming Converter</h3>
-                <p class="project-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">ETL</span>
-                    <span class="tag">Finite State Machine</span>
-                    <span class="tag">Optimization</span>
-                </p>
-                <p>Developed a memory-efficient streaming parser to convert large SQL dump files (5GB+) into CSV format. Solved critical memory limitations of standard libraries by implementing a custom Finite State Machine that handles multi-line INSERTs, nested parentheses, and dynamic quoting without loading the full file.</p>
-                <p><strong>Key Results:</strong> Achieved O(1) memory complexity and linear processing speed (~50-100 MB/sec), enabling the migration of gigabytes of production data at Alpha Sophia.</p>
-
-                <div class="project-gallery">
-                    <img src="images/sql_parser_fsm.png" alt="Finite State Machine Logic Diagram" class="project-img">
-                    <img src="images/sql_parser_benchmark.png" alt="Memory Usage vs Standard Parsers" class="project-img">
-                </div>
-
-                <div class="action-buttons">
-                    <a href="project-sql-converter.html" class="btn-primary">View Project Details</a>
-                    <a href="https://github.com/fabiansteinmetz" class="btn-secondary">View Code</a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <h3>Hierarchical Modeling and MCMC: Bayesian Modeling of Football Attendance</h3>
-                <p class="project-tags">
-                    <span class="tag">PyMC</span>
-                    <span class="tag">Bayesian Statistics</span>
-                    <span class="tag">Hierarchical Models</span>
-                    <span class="tag">Predictive Modeling</span>
-                </p>
-                <p>Analyzed factors driving stadium attendance in the Argentine Primera División using hierarchical Bayesian frameworks. Compared Poisson and Negative Binomial regression models to decouple the effects of team popularity from scheduling factors (e.g., day of the week).</p>
-                <p><strong>Key Results:</strong> Generated calibrated posterior predictions for missing match data (MAE &lt; 5%) and identified significant "weekend effects" on attendance variance independent of team performance.</p>
-
-                <div class="project-gallery">
-                    <img src="images/football_posterior.png" alt="Posterior Distributions of Attendance" class="project-img">
-                    <img src="images/football_ppc.png" alt="Posterior Predictive Checks" class="project-img">
-                </div>
-
-                <div class="action-buttons">
-                    <a href="project-football.html" class="btn-primary">View Project Report</a>
-                    <a href="https://github.com/fabiansteinmetz" class="btn-secondary">View Code</a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <h3>Bayesian Data Analysis: Educational Inequality in Argentina</h3>
-                <p class="project-tags">
-                    <span class="tag">PyMC</span>
-                    <span class="tag">Robust Regression</span>
-                    <span class="tag">Student-T Likelihood</span>
-                    <span class="tag">Education Policy</span>
-                </p>
-                <p>Investigated the relationship between socioeconomic factors and standardized math test scores ("Aprender") across Argentinian secondary schools. Implemented and compared polynomial regression models with Normal vs. Student-T likelihoods to handle outliers and heavy tails in performance data.</p>
-                <p><strong>Key Results:</strong> The Student-T model provided superior fit (lower LOO/WAIC scores), revealing that conventional normal models significantly underestimate the impact of socioeconomic status on educational outcomes in extreme cases.</p>
-
-                <div class="project-gallery">
-                    <img src="images/education_inequality_scatter.png" alt="Scatter Plot of SES vs Math Scores" class="project-img">
-                    <img src="images/education_robust_regression.png" alt="Student-T vs Normal Regression Fit" class="project-img">
-                </div>
-
-                <div class="action-buttons">
-                    <a href="project-education-inequality.html" class="btn-primary">View Project Report</a>
-                    <a href="https://github.com/fabiansteinmetz" class="btn-secondary">View Code</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="portfolio-section">
-            <h2>Current Projects & Working Papers</h2>
+        <h2 class="section-title">Working Papers & Current Research</h2>
+        
+        <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 4rem;">
             
-            <div class="project-card wip">
-                <h3>Impact of Speed Limit Reductions in Wales</h3>
-                <p class="project-tags">
-                    <span class="tag">R</span>
-                    <span class="tag">Policy Analysis</span>
-                    <span class="tag">Diff-in-Diff</span>
-                    <span class="tag">Statistics</span>
+            <div style="border-left: 3px solid #000; padding-left: 1rem;">
+                <h3 style="font-size: 1rem; margin: 0;">Impact of Speed Limit Reductions in Wales</h3>
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #666;">Diff-in-Diff | R | Policy Analysis</span>
+                <p style="font-size: 0.9rem; margin: 0.3rem 0;">
+                    Evaluating the causal effect of the default speed limit reduction (30 to 20mph) on collision rates using Two-Way Fixed Effects.
                 </p>
-                <p><strong>Title:</strong> Does Going Slower Really Make Us Safer?</p>
-                <p>Evaluating the causal effect of Wales' 2023 default speed limit reduction (from 30 to 20mph) on collision rates. Utilizing a Difference-in-Differences approach with Two-Way Fixed Effects to estimate policy impact while controlling for confounding variables.</p>
-                <p><strong>Status:</strong> Final Project / Working Paper (Fall 2025)</p>
-                <div class="action-buttons">
-                     <a href="https://github.com/fabiansteinmetz" class="project-link">View Code</a>
-                </div>
             </div>
 
-            <div class="project-card wip">
-                <h3>Epidemiological Compartmental Model with Bayesian Inference</h3>
-                <p class="project-tags">
-                    <span class="tag">PyMC</span>
-                    <span class="tag">Bayesian Inference</span>
-                    <span class="tag">NUTS/HMC</span>
-                    <span class="tag">Research</span>
+            <div style="border-left: 3px solid #ccc; padding-left: 1rem;">
+                <h3 style="font-size: 1rem; margin: 0;">Epidemiological Compartmental Model with Bayesian Inference</h3>
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #666;">Minerva Mathematical Modeling Research Group</span>
+                <p style="font-size: 0.9rem; margin: 0.3rem 0;">
+                    Reproducing non-linear epidemiological models by translating R-based Bayesian frameworks into PyMC using ODE-based SEIR dynamics.
                 </p>
-                <p><strong>Affiliation:</strong> Minerva Mathematical Modeling Research Group</p>
-                <p>Reproducing and extending non-linear epidemiological models by translating R-based Bayesian frameworks into PyMC. Implementing ODE-based SEIR dynamics with advanced sampling techniques (NUTS, HMC) for robust parameter estimation and uncertainty quantification.</p>
-                <p><strong>Status:</strong> Research Assistant (Aug 2025 - Present)</p>
-                <div class="action-buttons">
-                    <a href="https://github.com/fabiansteinmetz" class="project-link">View Code</a>
-               </div>
             </div>
 
-            <div class="project-card wip">
-                <h3>Sustainable Agriculture ML Indicators (Tanzania)</h3>
-                <p class="project-tags">
-                    <span class="tag">Machine Learning</span>
-                    <span class="tag">Random Forest</span>
-                    <span class="tag">scikit-learn</span>
-                    <span class="tag">Research</span>
+            <div style="border-left: 3px solid #ccc; padding-left: 1rem;">
+                <h3 style="font-size: 1rem; margin: 0;">Sustainable Agriculture ML Indicators (Tanzania)</h3>
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #666;">Co-authors: Prof. Ma, R. Li</span>
+                <p style="font-size: 0.9rem; margin: 0.3rem 0;">
+                    Developing ML pipelines (Random Forests) to generate sustainability indicators for smallholder farms using National Panel Survey data.
                 </p>
-                <p><strong>Co-authors:</strong> Prof. Ma (National Taiwan University), Ryan Li</p>
-                <p>Developing machine learning pipelines to generate sustainability indicators for Tanzanian smallholder farms using 2021 National Panel Survey data. Using clustering analysis and random forests to identify key drivers of environmental and economic sustainability.</p>
-                <p><strong>Status:</strong> Manuscript in preparation</p>
-                <div class="action-buttons">
-                    <a href="https://github.com/fabiansteinmetz" class="project-link">View Code</a>
-               </div>
             </div>
 
-        </section>
+        </div>
 
-        <section class="portfolio-section">
-            <h2>Additional Links</h2>
-            <div class="links-grid">
-                <a href="https://github.com/fabiansteinmetz" target="_blank" class="link-card">
-                    <h3>GitHub</h3>
-                    <p>View my code repositories and open-source contributions</p>
-                </a>
-                <a href="https://linkedin.com/in/fabiansteinmetz" target="_blank" class="link-card">
-                    <h3>LinkedIn</h3>
-                    <p>Connect with me professionally</p>
-                </a>
-                <a href="mailto:fabian@uni.minerva.edu" class="link-card">
-                    <h3>Contact</h3>
-                    <p>Get in touch for collaborations or opportunities</p>
-                </a>
-            </div>
-        </section>
     </div>
 </body>
 </html>
