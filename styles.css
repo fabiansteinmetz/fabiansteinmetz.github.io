@@ -310,8 +310,8 @@ a {
 }
 
 .profile-pic {
-    width: 120px;       /* Smaller, compact size */
-    height: 120px;
+    width: 220px;       /* Smaller, compact size */
+    height: 220px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 1rem;
