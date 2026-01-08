@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Fabian Steinmetz</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600&family=Lato:wght@400;700&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --font-sans: 'Lato', sans-serif;
+            --font-serif: 'Crimson Pro', serif;
+            --font-mono: 'Source Code Pro', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            line-height: 1.4;
+            color: #222;
+            background: #fff;
+            font-size: 15px;
+        }
+
+        /* Navigation */
+        .navbar {
+            border-bottom: 1px solid #ddd;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0.7rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: #666;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #000;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem 2.5rem;
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 2px solid #000;
+        }
+
+        .page-header h1 {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            margin-bottom: 0.7rem;
+            font-weight: 600;
+        }
+
+        .download-link {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: #000;
+            text-decoration: none;
+            border: 2px solid #000;
+            padding: 0.5rem 1.2rem;
+            transition: all 0.2s;
+        }
+
+        .download-link:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        /* Resume Sections */
+        .resume-section {
+            margin-bottom: 1.75rem;
+        }
+
+        .resume-section h2 {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            margin-bottom: 0.85rem;
+            padding-bottom: 0.35rem;
+            border-bottom: 2px solid #eee;
+            font-weight: 600;
+        }
+
+        .resume-item {
+            margin-bottom: 1.3rem;
+            padding-left: 0.5rem;
+        }
+
+        .resume-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.15rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .resume-item h3 {
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #000;
+            margin: 0;
+        }
+
+        .resume-item .date {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: #666;
+        }
+
+        .resume-item .subtitle {
+            font-size: 0.85rem;
+            color: #555;
+            margin-bottom: 0.35rem;
+            font-style: italic;
+        }
+
+        .resume-item ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 0.35rem;
+        }
+
+        .resume-item li {
+            font-size: 0.85rem;
+            line-height: 1.4;
+            color: #333;
+            margin-bottom: 0.25rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .resume-item li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #999;
+        }
+
+        /* Timeline Layout for Professional Experience */
+        .timeline-container {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline-container:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #ddd;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.6rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.3rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #000;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 2px #ddd;
+        }
+
+        .timeline-item:hover:before {
+            background: #666;
+            box-shadow: 0 0 0 2px #999;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.15rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .timeline-item h3 {
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #000;
+            margin: 0;
+        }
+
+        .timeline-item .date {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: #666;
+        }
+
+        .timeline-item .subtitle {
+            font-size: 0.85rem;
+            color: #555;
+            margin-bottom: 0.35rem;
+            font-style: italic;
+        }
+
+        .timeline-item ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 0.35rem;
+        }
+
+        .timeline-item li {
+            font-size: 0.85rem;
+            line-height: 1.4;
+            color: #333;
+            margin-bottom: 0.25rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .timeline-item li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #999;
+        }
+
+        /* Awards List */
+        .awards-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .award-item {
+            margin-bottom: 0.8rem;
+            padding-left: 0.5rem;
+        }
+
+        .award-header {
+            display: flex;
+            align-items: baseline;
+            gap: 0.6rem;
+            margin-bottom: 0.2rem;
+            flex-wrap: wrap;
+        }
+
+        .award-year {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: #666;
+            font-weight: 500;
+            min-width: 50px;
+        }
+
+        .award-title {
+            font-size: 0.85rem;
+            color: #000;
+            font-weight: 500;
+            flex: 1;
+        }
+
+        .award-institution {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: #666;
+            background: #f5f5f5;
+            padding: 0.15rem 0.5rem;
+            border-radius: 3px;
+            margin-left: 0.4rem;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 0.7rem;
+        }
+
+        .skill-category h3 {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: #000;
+            margin-bottom: 0.35rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .skill-category p {
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .skill-category.full-width {
+            grid-column: 1 / -1;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 2.5rem;
+            padding-top: 1.3rem;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .container {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .timeline-container {
+                padding-left: 1.5rem;
+            }
+
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+
+            .timeline-item:before {
+                left: -1.5rem;
+            }
+
+            .resume-header,
+            .timeline-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .award-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Fabian Steinmetz</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#research" class="nav-link">Research</a></li>
+                <li><a href="resume.html" class="nav-link active">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        
+        <header class="page-header">
+            <h1>Resume</h1>
+            <a href="Resume_Fabian_Steinmetz.pdf" class="download-link" download>Download PDF Resume</a>
+        </header>
+
+        <section class="resume-section">
+            <h2>Education</h2>
+            
+            <div class="resume-item">
+                <div class="resume-header">
+                    <h3>Minerva University</h3>
+                    <span class="date">Aug 2023 – May 2027</span>
+                </div>
+                <p class="subtitle">B.S. in Computer Science & B.S. in Mathematics | San Francisco, CA</p>
+                <ul>
+                    <li><strong>GPA: 3.9/4.0</strong></li>
+                    <li><strong>Relevant Coursework:</strong> Computational & Bayesian Statistics, Complex Systems Modeling, Machine Learning, Real Analysis, Differential Equations</li>
+                    <li><strong>Leadership:</strong> Editor of Napkins Magazine, Sustainability Collective, Fiscal Challenge Competition Finalist</li>
+                </ul>
+            </div>
+
+            <div class="resume-item">
+                <div class="resume-header">
+                    <h3>St Clare's Oxford</h3>
+                    <span class="date">Sep 2021 – Jun 2023</span>
+                </div>
+                <p class="subtitle">International Baccalaureate | Oxford, United Kingdom</p>
+                <ul>
+                    <li><strong>Final Score: 45/45 (Top 0.1% globally)</strong></li>
+                    <li>85% Academic Scholarship, 7× Principal's Award for Highest Academic Achievement</li>
+                    <li>Student Council President, Economics Club & MUN Secretary General</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2>Professional Experience</h2>
+
+            <div class="timeline-container">
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3>Data Science Intern</h3>
+                        <span class="date">Jun 2025 – Present</span>
+                    </div>
+                    <p class="subtitle">Alpha Sophia (US-German MedTech Startup) | Cologne, Germany</p>
+                    <ul>
+                        <li>Created probabilistic Python & SQL models to match <strong>3.9M+ healthcare professionals</strong> with <strong>25M+ PubMed publications</strong></li>
+                        <li>Increased match rates by <strong>103%</strong> through PMI analysis, clustering, and custom algorithms—deployed to production in July 2025</li>
+                        <li>Engineered complete SQL/XML database structure for Clinical Trials data on Snowflake</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3>Epidemiology Research Assistant</h3>
+                        <span class="date">Aug 2025 – Present</span>
+                    </div>
+                    <p class="subtitle">Minerva Mathematical Modeling Research Group | San Francisco, CA</p>
+                    <ul>
+                        <li>Reproducing non-linear epidemiological models by translating R-based Bayesian models into PyMC</li>
+                        <li>Implementing ODE-based compartmental dynamics with advanced sampling techniques (NUTS, HMC, custom MCMC)</li>
+                        <li>Estimating disease dynamics parameters and conducting uncertainty quantification</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3>Machine Learning Research Assistant</h3>
+                        <span class="date">Aug 2024 – Present</span>
+                    </div>
+                    <p class="subtitle">National Taiwan University | Taipei City, Taiwan</p>
+                    <ul>
+                        <li>Developing statistical models to evaluate ML algorithms for sustainability indicators in Tanzanian agriculture</li>
+                        <li>Processing and analyzing 2021 NPS open-source data using random forests, clustering, and ETL pipelines</li>
+                        <li>Co-authoring research paper on machine learning applications in environmental sustainability</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3>Engineering Research Assistant</h3>
+                        <span class="date">Jan 2025 – May 2025</span>
+                    </div>
+                    <p class="subtitle">Korea Institute of Science and Technology | Seoul, South Korea</p>
+                    <ul>
+                        <li>Performed chemical protocols and analyzed experimental data for carbon capture via mineral carbonation</li>
+                        <li>Modeled CO₂ recycling into Na₂CO₃ at A-Labs</li>
+                        <li>Conducted laboratory experiments on mineral carbonation for carbon sequestration</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3>Robotics Software Research Assistant</h3>
+                        <span class="date">Aug 2025 – Present</span>
+                    </div>
+                    <p class="subtitle">Robotics & AI Lab, Universidad Abierta Interamericana | Buenos Aires, Argentina</p>
+                    <ul>
+                        <li>Developing Unity-based 3D robot simulator with external connections for AI and robotics education</li>
+                        <li>Integrating physical robots with digital twins for teaching programming</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3>App Development Intern</h3>
+                        <span class="date">Aug 2024 – Jan 2025</span>
+                    </div>
+                    <p class="subtitle">Andgreen Ltd. | Taipei City, Taiwan</p>
+                    <ul>
+                        <li>Led team of 5 to prototype iOS app for tracking ESG actions using React Native</li>
+                        <li>Designed UI/UX interface in Figma for Taiwanese companies' sustainability records</li>
+                        <li>Integrated streaming data in IoT small-scale algae cultivation systems</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2>Teaching Experience</h2>
+
+            <div class="resume-item">
+                <div class="resume-header">
+                    <h3>CS114 Statistics & Probability Teaching Assistant</h3>
+                    <span class="date">Jan 2024 – Present</span>
+                </div>
+                <p class="subtitle">Minerva University | Buenos Aires, Argentina</p>
+                <ul>
+                    <li>Holding weekly office hours, modifying and grading assignments for 100+ students</li>
+                    <li>Leading workshops on computational statistics and probability theory</li>
+                </ul>
+            </div>
+
+            <div class="resume-item">
+                <div class="resume-header">
+                    <h3>Python Study Group Lead</h3>
+                    <span class="date">Jan 2024 – Present</span>
+                </div>
+                <p class="subtitle">Minerva University | San Francisco, CA</p>
+                <ul>
+                    <li>Hosting weekly 3-hour study groups on Python, inferential statistics, and game theory for 40+ students</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2>Selected Awards</h2>
+            <div class="awards-list">
+                <div class="award-item">
+                    <div class="award-header">
+                        <span class="award-year">2025</span>
+                        <span class="award-title">2nd Place Fiscal Challenge US National Finals
+                            <span class="award-institution">Economics & Econometrics</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="award-item">
+                    <div class="award-header">
+                        <span class="award-year">2023</span>
+                        <span class="award-title">3rd Place International Mathematical Modeling Competition
+                            <span class="award-institution">Maastricht</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="award-item">
+                    <div class="award-header">
+                        <span class="award-year">2023</span>
+                        <span class="award-title">Silver Medal British Mathematics Olympiad
+                            <span class="award-institution">Oxfordshire</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="award-item">
+                    <div class="award-header">
+                        <span class="award-year">2021-2023</span>
+                        <span class="award-title">90% Merit-based Scholarship and Principal's Awards
+                            <span class="award-institution">St Clare's Oxford</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="award-item">
+                    <div class="award-header">
+                        <span class="award-year">2022</span>
+                        <span class="award-title">2× Gold Medal, 1× Silver Medal
+                            <span class="award-institution">German Debating Championships</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="award-item">
+                    <div class="award-header">
+                        <span class="award-year">2018-2021</span>
+                        <span class="award-title">1st Place German Mathematics Olympiad
+                            <span class="award-institution">Cologne</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Advanced</h3>
+                    <p>Python, SQL, R</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Intermediate</h3>
+                    <p>C++, JavaScript, Julia, HTML & CSS, React Native</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Libraries & Tools</h3>
+                    <p>SageMath, SymPy, scikit-learn, SciPy, PyMC, Pandas, NumPy, Snowflake</p>
+                </div>
+                <div class="skill-category full-width">
+                    <h3>Languages</h3>
+                    <p>English (native), German (native), French (intermediate)</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2025 Fabian Steinmetz. Built with HTML & CSS.</p>
+        </footer>
+
+    </div>
+</body>
+</html>
