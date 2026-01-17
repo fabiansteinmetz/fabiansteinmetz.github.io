@@ -324,7 +324,7 @@
         /* Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 2fr 3fr 4fr;
             gap: 1rem;
             margin-top: 0.7rem;
         }
@@ -420,28 +420,6 @@
             <h1>Resume</h1>
             <a href="Resume_Fabian_Steinmetz.pdf" class="download-link" download>Download PDF Resume</a>
         </header>
-
-        <section class="resume-section">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Advanced</h3>
-                    <p>Python, SQL, R</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Intermediate</h3>
-                    <p>C++, JavaScript, Julia, HTML & CSS, React Native</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Libraries & Tools</h3>
-                    <p>SageMath, SymPy, scikit-learn, SciPy, PyMC, Pandas, NumPy, Snowflake</p>
-                </div>
-                <div class="skill-category full-width">
-                    <h3>Languages</h3>
-                    <p>English (native), German (native), French (intermediate)</p>
-                </div>
-            </div>
-        </section>
         
         <section class="resume-section">
             <h2>Education</h2>
@@ -474,22 +452,31 @@
         </section>
 
         <section class="resume-section">
-            <h2>Professional Experience</h2>
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Advanced</h3>
+                    <p>Python, SQL, R</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Intermediate</h3>
+                    <p>C++, JavaScript, Julia, HTML & CSS, React Native</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Libraries & Tools</h3>
+                    <p>SageMath, SymPy, scikit-learn, SciPy, PyMC, Pandas, NumPy, Snowflake</p>
+                </div>
+                <div class="skill-category full-width">
+                    <h3>Languages</h3>
+                    <p>English (native), German (native), French (intermediate)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2>Research Experience</h2>
 
             <div class="timeline-container">
-
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <h3>Data Science Intern</h3>
-                        <span class="date">Jun 2025 – Present</span>
-                    </div>
-                    <p class="subtitle">Alpha Sophia (US-German MedTech Startup) | Cologne, Germany</p>
-                    <ul>
-                        <li>Created probabilistic Python & SQL models to match <strong>3.9M+ healthcare professionals</strong> with <strong>25M+ PubMed publications</strong></li>
-                        <li>Increased match rates by <strong>103%</strong> through PMI analysis, clustering, and custom algorithms—deployed to production in July 2025</li>
-                        <li>Engineered complete SQL/XML database structure for Clinical Trials data on Snowflake</li>
-                    </ul>
-                </div>
 
                 <div class="timeline-item">
                     <div class="timeline-header">
@@ -539,6 +526,28 @@
                     <ul>
                         <li>Developing Unity-based 3D robot simulator with external connections for AI and robotics education</li>
                         <li>Integrating physical robots with digital twins for teaching programming</li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2>Professional Experience</h2>
+
+            <div class="timeline-container">
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3>Data Science Intern</h3>
+                        <span class="date">Jun 2025 – Present</span>
+                    </div>
+                    <p class="subtitle">Alpha Sophia (US-German MedTech Startup) | Cologne, Germany</p>
+                    <ul>
+                        <li>Created probabilistic Python & SQL models to match <strong>3.9M+ healthcare professionals</strong> with <strong>25M+ PubMed publications</strong></li>
+                        <li>Increased match rates by <strong>103%</strong> through PMI analysis, clustering, and custom algorithms—deployed to production in July 2025</li>
+                        <li>Engineered complete SQL/XML database structure for Clinical Trials data on Snowflake</li>
                     </ul>
                 </div>
 
